@@ -1,0 +1,108 @@
+<mujoco model="cr5">
+  <compiler angle="radian" meshdir="../meshes/obj" autolimits="true" />
+  <option cone="elliptic" impratio="10" />
+  <default>
+    <default class="cr5">
+      <joint damping="2" armature="0.1" frictionloss="0.1" />
+      <position kp="3000" kv="150" forcerange="-300 300" />
+      <default class="visual">
+        <geom type="mesh" contype="0" conaffinity="0" group="2" />
+      </default>
+      <default class="collision">
+        <geom type="mesh" group="3" rgba="0.2 0.6 1 0.3" />
+      </default>
+    </default>
+  </default>
+  <asset>
+    <model name="robotiq_2f85" file="../third_party/robotiq_2f85/2f85.xml" />
+    <mesh name="base_link_0" file="base_link_0.obj" inertia="shell" />
+    <mesh name="base_link_collision" file="base_link_collision.obj" />
+    <mesh name="Link1_0" file="Link1_0.obj" inertia="shell" />
+    <mesh name="Link1_1" file="Link1_1.obj" inertia="shell" />
+    <mesh name="Link1_2" file="Link1_2.obj" inertia="shell" />
+    <mesh name="Link1_collision" file="Link1_collision.obj" />
+    <mesh name="Link2_0" file="Link2_0.obj" inertia="shell" />
+    <mesh name="Link2_1" file="Link2_1.obj" inertia="shell" />
+    <mesh name="Link2_collision" file="Link2_collision.obj" />
+    <mesh name="Link3_0" file="Link3_0.obj" inertia="shell" />
+    <mesh name="Link3_1" file="Link3_1.obj" inertia="shell" />
+    <mesh name="Link3_2" file="Link3_2.obj" inertia="shell" />
+    <mesh name="Link3_collision" file="Link3_collision.obj" />
+    <mesh name="Link4_0" file="Link4_0.obj" inertia="shell" />
+    <mesh name="Link4_1" file="Link4_1.obj" inertia="shell" />
+    <mesh name="Link4_2" file="Link4_2.obj" inertia="shell" />
+    <mesh name="Link4_collision" file="Link4_collision.obj" />
+    <mesh name="Link5_0" file="Link5_0.obj" inertia="shell" />
+    <mesh name="Link5_1" file="Link5_1.obj" inertia="shell" />
+    <mesh name="Link5_collision" file="Link5_collision.obj" />
+    <mesh name="Link6_0" file="Link6_0.obj" inertia="shell" />
+    <mesh name="Link6_collision" file="Link6_collision.obj" />
+  </asset>
+  <worldbody>
+    <body name="base_link" childclass="cr5" gravcomp="1">
+      <inertial pos="-8.0961e-06 0.0019103 0.028995" mass="0.90882" fullinertia="0.0014545 0.001345 0.002155 4.2968e-08 -1.8199e-07 -6.243e-06" />
+      <geom mesh="base_link_0" rgba="0 0 0 1" class="visual" />
+      <geom name="base_link_collision" mesh="base_link_collision" class="collision" />
+      <body name="Link1" childclass="cr5" gravcomp="1" pos="0 0 0.147" quat="1 0 0 0">
+        <inertial pos="-8.7268e-07 -0.0032576 -0.0076748" mass="1.6123" fullinertia="0.0029122 0.0028191 0.0032836 5.7387e-09 1.9945e-08 0.00044094" />
+        <joint name="joint1" axis="0 0 1" range="-6.28 6.28" />
+        <geom mesh="Link1_0" rgba="0 0 0 1" class="visual" />
+        <geom mesh="Link1_1" rgba="0.8 0.8 0.8 1" class="visual" />
+        <geom mesh="Link1_2" rgba="0.8 0.8 0.8 1" class="visual" />
+        <geom name="Link1_collision" mesh="Link1_collision" class="collision" />
+        <body name="Link2" childclass="cr5" gravcomp="1" pos="0 0 0" quat="0.499998 0.5 0.5 -0.500002">
+          <inertial pos="-0.21351 -1.3842e-06 0.14252" mass="5.5186" fullinertia="0.0085919 0.027553 0.028294 7.5552e-07 -7.8922e-07 1.4629e-07" />
+          <joint name="joint2" axis="0 0 1" range="-6.28 6.28" />
+          <geom mesh="Link2_0" rgba="0.8 0.8 0.8 1" class="visual" />
+          <geom mesh="Link2_1" rgba="0 0 0 1" class="visual" />
+          <geom name="Link2_collision" mesh="Link2_collision" class="collision" />
+          <body name="Link3" childclass="cr5" gravcomp="1" pos="-0.427 0 0" quat="1 0 0 0">
+            <inertial pos="-0.15231 -1.4079e-07 0.022693" mass="2.8536" fullinertia="0.0032608 0.0092967 0.0095552 -3.2147e-10 0.00012363 2.9478e-10" />
+            <joint name="joint3" axis="0 0 1" range="-2.79 2.79" />
+            <geom mesh="Link3_0" rgba="0 0 0 1" class="visual" />
+            <geom mesh="Link3_1" rgba="0.8 0.8 0.8 1" class="visual" />
+            <geom mesh="Link3_2" rgba="0.8 0.8 0.8 1" class="visual" />
+            <geom name="Link3_collision" mesh="Link3_collision" class="collision" />
+            <body name="Link4" childclass="cr5" gravcomp="1" pos="-0.357 0 0.141" quat="0.707105 0 0 -0.707108">
+              <inertial pos="-3.2386e-07 -0.002077 -0.0015548" mass="0.67058" fullinertia="0.00066939 0.00065424 0.00065365 4.1975e-10 -1.0734e-08 0.00011081" />
+              <joint name="joint4" axis="0 0 1" range="-6.28 6.28" />
+              <geom mesh="Link4_0" rgba="0.8 0.8 0.8 1" class="visual" />
+              <geom mesh="Link4_1" rgba="0 0 0 1" class="visual" />
+              <geom mesh="Link4_2" rgba="0.8 0.8 0.8 1" class="visual" />
+              <geom name="Link4_collision" mesh="Link4_collision" class="collision" />
+              <body name="Link5" childclass="cr5" gravcomp="1" pos="0 -0.116 0" quat="0.707105 0.707108 0 0">
+                <inertial pos="-3.7738e-07 -0.0045777 -0.0012971" mass="0.7269" fullinertia="0.00073069 0.00071195 0.00071391 -5.7806e-09 6.7132e-09 -0.00011926" />
+                <joint name="joint5" axis="0 0 1" range="-6.28 6.28" />
+                <geom mesh="Link5_0" rgba="0 0 0 1" class="visual" />
+                <geom mesh="Link5_1" rgba="0.8 0.8 0.8 1" class="visual" />
+                <geom name="Link5_collision" mesh="Link5_collision" class="collision" />
+                <body name="Link6" childclass="cr5" gravcomp="1" pos="0 0.105 0" quat="0.707105 -0.707108 0 0">
+                  <inertial pos="5.0777e-11 9.3774e-05 -0.019285" mass="0.15789" fullinertia="7.8045e-05 7.9168e-05 0.00012951 6.1582e-15 6.2471e-14 -1.3822e-07" />
+                  <joint name="joint6" axis="0 0 1" range="-6.28 6.28" />
+                  <geom mesh="Link6_0" rgba="0.8 0.211765 0.305882 1" class="visual" />
+                  <geom name="Link6_collision" mesh="Link6_collision" class="collision" />
+                  <site name="flange" pos="0 0 0" size="0.005" />
+                  <attach model="robotiq_2f85" body="base_mount" prefix="gripper/" />
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+  <actuator>
+    <position name="joint1" joint="joint1" ctrlrange="-6.28 6.28" class="cr5" />
+    <position name="joint2" joint="joint2" ctrlrange="-6.28 6.28" class="cr5" />
+    <position name="joint3" joint="joint3" ctrlrange="-2.79 2.79" class="cr5" />
+    <position name="joint4" joint="joint4" ctrlrange="-6.28 6.28" class="cr5" />
+    <position name="joint5" joint="joint5" ctrlrange="-6.28 6.28" class="cr5" />
+    <position name="joint6" joint="joint6" ctrlrange="-6.28 6.28" class="cr5" />
+  </actuator>
+  <contact>
+    <exclude body1="base_link" body2="Link1" />
+    <exclude body1="base_link" body2="Link2" />
+    <exclude body1="Link3" body2="Link5" />
+    <exclude body1="Link4" body2="Link6" />
+  </contact>
+</mujoco>
